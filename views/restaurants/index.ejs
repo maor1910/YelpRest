@@ -1,0 +1,35 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome To YelpRest!</h1>
+			<p>View our hand picked restaurants from all over the world</p>
+			<p>
+				<a href="/restaurants/new" class="btn btn-info btn-lg">Add A New Restaurant</a>
+			</p>
+		</div>
+	</header>
+		
+	<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+		<% restaurants.forEach(function(restaurant){ %>
+		<div class="col-md-3 col-sm-6">
+			<div class="caption">
+				<h4> <%= restaurant.name %> </h4>				
+			</div>
+			<div class="thumbnail">
+				<img src="<%=restaurant.image%>">
+			</div>
+			<p>
+				<a href="/restaurants/<%= restaurant._id %>" class="btn btn-primary">More Info </a>
+			</p>
+		</div>
+		<% }) %>
+	</div>
+</div>
+
+
+
+
+<%- include("../partials/footer") %>
+
